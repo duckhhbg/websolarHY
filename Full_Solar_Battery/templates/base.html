@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %}{% endblock title %} </title>
+    {% block head %}{% endblock head %}
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <script src="{% static "js/common.js" %}"></script>
+    <link rel="stylesheet" href="{% static "css/styte.css" %}">
+</head>
+<body>
+	{% if user.is_authenticated %}
+		<header class="header dflex dflex__ct dflex__ct__ct">
+			<div class="header__logo ">
+				<a href="{% url 'index_HTML' %}" class="dflex dflex__ct dflex__ct__ct btn btn__nav__header" >
+					<img class="logo__header" src="{% static "img/logo.png" %}" alt="">
+					<span class="header__logo__title dflex dflex__ct dflex__column dflex__ct__ct">
+						<span class="title__f18">
+							CTD-TNUT
+						</span>
+						<span class="title__f12 text__ct">
+							Trung tâm nghiên cứu, sáng tạo và phát triển công nghệ
+						</span>
+					</span>
+				</a>
+			</div>
+			<div class="header__nav dflex dflex__ct dflex__ct__ct dflex__column">
+				<div class="header__title dflex dflex__ct dflex__ct__ct dflex__column btn btn__nav__header">
+					<h2 class="text__ct">HỆ THỐNG ĐIỀU KHIỂN TÁI CẤU TRÚC PIN MẶT TRỜI</h2>
+				</div>
+				<nav class="header__nav__list dflex__ct dflex__ct__ct">
+					<div class="dflex dflex__ct dflex__ct__ct">
+						<div class="header__nav__item">
+							<a href="{% url 'index_HTML' %}" class="btn btn__nav__header btn__nav__item dflex dflex__ct__ct">
+								Thông tin hệ thống
+							</a>
+						</div>
+						<div class="header__nav__item">
+							<a href="{% url 'solars_HTML' %}" class="btn btn__nav__header btn__nav__item dflex dflex__ct__ct">
+								Thông tin các tấm pin
+							</a>
+						</div>
+						<div class="header__nav__item">
+							<a href="{% url 'configuration_HTML' %}" class="btn btn__nav__header btn__nav__item dflex dflex__ct__ct">
+								Cấu hình
+							</a>
+						</div>
+						<div class="header__nav__item">
+							<a href="{% url 'manager_HTML' %}" class="btn btn__nav__header btn__nav__item dflex dflex__ct__ct">
+								Quản lý
+							</a>
+						</div>
+						<div class="header__nav__item">
+							<a href="{% url 'changepass_HTML' %}" class="btn btn__nav__header btn__nav__item dflex dflex__ct__ct">
+								Đổi mật khẩu
+							</a>
+						</div>
+						<div class="header__nav__item">
+							<a href="{% url 'Logout' %}" class="btn btn__nav__header btn__nav__item dflex dflex__ct__ct btn__nav__lo">
+								Đăng xuất
+							</a>
+						</div>
+					</div>
+				</nav>
+				<div class="header__menu">
+					<div class="header__menu__inner dflex dflex__ct dflex__ct__ct">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<nav class="header__nav__sp">
+					<div class="header__nav__sp__inner dflex dflex__ct dflex__ct__sa dflex__column">
+						<div class="header__nav__item__sp">
+							<a href="{% url 'index_HTML' %}" class="btn btn__nav__header btn__nav__item dflex dflex__ct__ct">
+								Thông tin hệ thống
+							</a>
+						</div>
+						<div class="header__nav__item__sp">
+							<a href="{% url 'solars_HTML' %}" class="btn btn__nav__header btn__nav__item dflex dflex__ct__ct">
+								Thông tin các tấm pin
+							</a>
+						</div>
+						<div class="header__nav__item__sp">
+							<a href="{% url 'configuration_HTML' %}" class="btn btn__nav__header btn__nav__item dflex dflex__ct__ct">
+								Cấu hình
+							</a>
+						</div>
+						<div class="header__nav__item__sp">
+							<a href="{% url 'manager_HTML' %}" class="btn btn__nav__header btn__nav__item dflex dflex__ct__ct">
+								Quản lý
+							</a>
+						</div>
+						<div class="header__nav__item__sp">
+							<a href="{% url 'changepass_HTML' %}" class="btn btn__nav__header btn__nav__item dflex dflex__ct__ct">
+								Đổi mật khẩu
+							</a>
+						</div>
+						<div class="header__nav__item__sp">
+							<a href="{% url 'Logout' %}" class="btn btn__nav__header btn__nav__item dflex dflex__ct__ct btn__nav__lo">
+								Đăng xuất
+							</a>
+						</div>
+						<div class="header__logo__sp">
+							<a href="" class="dflex dflex__ct dflex__ct__ct btn btn__nav__header" >
+								<img class="logo__header" src="{% static "img/logo.png" %}" alt="">
+								<span class="header__logo__title dflex dflex__ct dflex__column dflex__ct__ct">
+									<span class="title__f18">
+										CTD-TNUT
+									</span>
+									<span class="title__f12 text__ct">
+										Trung tâm nghiên cứu, sáng tạo và phát triển công nghệ
+									</span>
+								</span>
+							</a>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</header>
+		{% block content %}{% endblock content %}
+	{% else %}
+		{% include "Not_Login.html" %}
+	{% endif %}
+    
+</body>
+</html>

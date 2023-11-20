@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Quản lý tài khoản{% endblock title %}
+
+{% block head %}
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+{% endblock head %}
+
+{% block content %}
+    <content class="content">
+
+        <section class="add">
+			<div class="inner">
+				<button class="btn btn_add" data-bs-toggle="modal" data-bs-target="#add">
+					Thêm
+				</button>
+				<div class="modal fade" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+                        <form action="" method="post">
+                            {% csrf_token %}
+						    <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm nhân viên</h1>
+                                </div>
+            
+                                <div class="modal-body">
+                                    <label for="name">Tên nhân viên</label>
+                                    <input type="text" value="" name="add_name" id="name" placeholder="Tên nhân viên">
+                                    <label for="username">Tên tài khoản</label>
+                                    <input type="text" value="" name="add_userName" id="username" placeholder="Tên tài khoản">
+                                    <label for="pass">Mật khẩu</label>
+                                    <input type="password" value="" name="add_password" id="pass" placeholder="Mật khẩu">
+                                    <label for="press">Quyền</label>
+                                    <select id="press" name="add_press">
+                                        <option value="Giám sát">Giám sát</option>
+                                        <option value="Quản trị">Quản trị</option>
+                                        <option value="Điều khiển">Điều khiển</option>
+                                    </select>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                    <button type="submit" class="btn btn-primary RELOAD" id="confirm">Thêm</button>
+                                </div>
+                            </div>
+                        </form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+        <section class="content__1">
+            <div class="inner">
+                <table class="user__table">
+                    <tr class="user__th">
+                        <th>STT</th>
+                        <th>Tên nhân viên</th>
+                        <th>Tên tài khoản</th>
+                        <th>Quyền</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    {% for show in user_list %}
+                        <tr>
+                            
+                                <td>{{forloop.counter}}</td>
+                                <td>{{show.Name}}</td>
+                                <td>{{show.userName}}</td>
+                                <td>{{show.Jurisdiction}}</td>
+                                <td>
+                                    <button class="btn btn_change" data-bs-toggle="modal" data-bs-target="#change__{{show.id}}">chỉnh sửa</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn_del" data-bs-toggle="modal" data-bs-target="#del__{{show.id}}">Xoá</button>
+                                </td>
+                            
+                            {% comment %} <td>1</td>
+                            <td>Nguyễn Văn Anh</td>
+                            <td>nhanvien1</td>
+                            <td>Giám sát</td>
+                            <td>
+                                <button class="btn btn_change" data-bs-toggle="modal" data-bs-target="#change__1">chỉnh sửa</button>
+                            </td>
+                            <td>
+                                <button class="btn btn_del" data-bs-toggle="modal" data-bs-target="#del__1">Xoá</button>
+                            </td> {% endcomment %}
+                        </tr>
+                    {% endfor %}
+                </table>
+
+                {% for i in user_list %}
+                    <form action="{% url 'manager_Delete' i.id %}" method="post">
+                        {% csrf_token %}
+                        <div class="modal fade" id="del__{{i.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Xác nhận?</h1>
+                                    </div>
+                
+                                    <div class="modal-body">
+                                        Bạn xác nhận muốn xoá tài khoản {{i.userName}}?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                        <button type="submit" class="btn btn-primary RELOAD" id="confirm">Xác nhận</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                {% endfor %}
+                
+                
+                {% for i in user_list %}
+                    <form action="/manager_Update/{{i.id}}" method="post">
+                        {% csrf_token %}
+                        <div class="modal fade" id="change__{{i.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Thông tin tài khoản</h1>
+                                    </div>
+                
+                                    <div class="modal-body">
+                                        <label for="name">Tên nhân viên</label>
+                                        <input type="text" value="{{i.Name}}" id="name" name="edit_name">
+                                        <label for="username">Tên tài khoản</label>
+                                        <input type="text" value="{{i.userName}}" id="username" name="edit_userName">
+                                        <label for="pass">Mật khẩu</label>
+                                        <input type="text" value="{{i.Password}}" id="pass" name="edit_password">
+                                        <label for="press">Quyền</label>
+                                        <select id="press" name="edit_permission">
+                                            <option value="{{i.Jurisdiction}}" selected="">{{i.Jurisdiction}}</option>
+                                            <option value="Giám sát">Giám sát</option>
+                                            <option value="Quản trị">Quản trị</option>
+                                            <option value="Điều khiển">Điều khiển</option>
+                                        </select>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                        <button type="submit" class="btn btn-primary RELOAD" id="confirm">Lưu</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                {% endfor %}
+            </div>
+        </section>
+    </content>
+{% endblock content %}

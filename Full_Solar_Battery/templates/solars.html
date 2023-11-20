@@ -1,0 +1,461 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Thông tin các tấm pin{% endblock title %}
+
+{% block content %}
+	<content class="content">
+		<section class="content__solar">
+			<div class="inner">
+				<div class="content__1__header btn__content dflex">
+					<span>Thông tin các tấm pin</span>
+				</div>
+				<div class="content__solar__inner">
+					<input class="radio" id="solar1" name="group" type="radio" checked>
+					<input class="radio" id="solar2" name="group" type="radio">
+					<input class="radio" id="solar3" name="group" type="radio">
+					<div class="tabs">
+						<label for="solar1" class="tab l1" id="one-tab">Thông số các tấm lane 1
+						</label>
+						<label for="solar2" class="tab l2" id="two-tab">Thông số các tấm lane 2</label>
+						<label for="solar3" class="tab l3" id="three-tab">Thông số các tấm lane 3</label>
+					</div>
+					<div class="panels">
+						<div class="panel" id="solar1__panel">
+							<div class="list">
+								<div class="list__item">
+
+									<div class="item">
+										<div class="item__header">
+											<h2>PIN <span>{{So_1}}</span></h2>
+										</div>
+										<img src="{% static 'img/solar_bg.jpg' %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>{{Cong_Suat_1}}<span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>{{Dien_Ap_1}}<span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>{{Dong_Dien_1}}<span>kA</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="item__header">
+											<h2>PIN <span>{{So_2}}</span></h2>
+										</div>
+										<img src="{% static 'img/solar_bg.jpg' %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>{{Cong_Suat_2}}<span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>{{Dien_Ap_2}} <span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>{{Dong_Dien_2}} <span>kA</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="item__header">
+											<h2>PIN <span>{{So_3}}</span></h2>
+										</div>
+										<img src="{% static 'img/solar_bg.jpg' %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>{{Cong_Suat_3}} <span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>{{Dien_Ap_3}} <span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>{{Dong_Dien_3}} <span>kA</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="item__header">
+											<h2>PIN <span>{{So_4}}</span></h2>
+										</div>
+										<img src="{% static 'img/solar_bg.jpg' %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>{{Cong_Suat_4}} <span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>{{Dien_Ap_4}} <span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>{{Dong_Dien_4}} <span>kA</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="item__header">
+											<h2>PIN <span>{{So_5}}</span></h2>
+										</div>
+										<img src="{% static 'img/solar_bg.jpg' %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>{{Cong_Suat_5}} <span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>{{Dien_Ap_5}} <span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>{{Dong_Dien_5}} <span>kA</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="item__header">
+											<h2>PIN <span>{{So_6}}</span></h2>
+										</div>
+										<img src="{% static 'img/solar_bg.jpg' %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>{{Cong_Suat_6}} <span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>{{Dien_Ap_6}} <span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>{{Dong_Dien_6}} <span>kA</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="item__header">
+											<h2>PIN <span>{{So_7}}</span></h2>
+										</div>
+										<img src="{% static 'img/solar_bg.jpg' %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>{{Cong_Suat_7}} <span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>{{Dien_Ap_7}} <span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>{{Dong_Dien_7}} <span>kA</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="item__header">
+											<h2>PIN <span>{{So_8}}</span></h2>
+										</div>
+										<img src="{% static 'img/solar_bg.jpg' %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>{{Cong_Suat_8}} <span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>{{Dien_Ap_8}} <span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>{{Dong_Dien_8}} <span>kA</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="item__header">
+											<h2>PIN <span>{{So_9}}</span></h2>
+										</div>
+										<img src="{% static 'img/solar_bg.jpg' %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>{{Cong_Suat_9}} <span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>{{Dien_Ap_9}} <span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>{{Dong_Dien_9}} <span>kA</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="item__header">
+											<h2>PIN <span>{{So_10}}</span></h2>
+										</div>
+										<img src="{% static 'img/solar_bg.jpg' %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>{{Cong_Suat_10}} <span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>{{Dien_Ap_10}} <span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>{{Dong_Dien_10}} <span>kA</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="item__header">
+											<h2>PIN <span>{{So_11}}</span></h2>
+										</div>
+										<img src="{% static 'img/solar_bg.jpg' %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>{{Cong_Suat_11}} <span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>{{Dien_Ap_11}} <span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>{{Dong_Dien_11}} <span>kA</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="item__header">
+											<h2>PIN <span>{{So_12}}</span></h2>
+										</div>
+										<img src="{% static 'img/solar_bg.jpg' %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>{{Cong_Suat_12}} <span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>{{Dien_Ap_12}} <span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>{{Dong_Dien_12}} <span>kA</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="item__header">
+											<h2>PIN <span>{{So_13}}</span></h2>
+										</div>
+										<img src="{% static 'img/solar_bg.jpg' %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>{{Cong_Suat_13}} <span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>{{Dien_Ap_13}} <span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>{{Dong_Dien_13}} <span>kA</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="item__header">
+											<h2>PIN <span>{{So_14}}</span></h2>
+										</div>
+										<img src="{% static 'img/solar_bg.jpg' %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>{{Cong_Suat_14}} <span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>{{Dien_Ap_14}} <span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>{{Dong_Dien_14}} <span>kA</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="item__header">
+											<h2>PIN <span>{{So_15}}</span></h2>
+										</div>
+										<img src="{% static 'img/solar_bg.jpg' %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>{{Cong_Suat_15}} <span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>{{Dien_Ap_15}} <span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>{{Dong_Dien_15}} <span>kA</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="item__header">
+											<h2>PIN <span>{{So_16}}</span></h2>
+										</div>
+										<img src="{% static 'img/solar_bg.jpg' %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>{{Cong_Suat_16}} <span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>{{Dien_Ap_16}} <span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>{{Dong_Dien_16}} <span>kA</span></p>
+											</div>
+										</div>
+									</div>
+									
+
+								</div>
+							</div>
+						</div>
+						<div class="panel" id="solar2__panel">
+							<div class="list">
+								<div class="list__item">
+
+									<div class="item">
+										<div class="item__header">
+											<h2>PIN <span>17</span></h2>
+										</div>
+										<img src="{% static "img/solar_bg.png" %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>9999 <span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>9999 <span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>9999 <span>kA</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>PV</p>
+												<p>9999</p>
+											</div>
+										</div>
+									</div>
+									
+
+
+								</div>
+							</div>
+						</div>
+						<div class="panel" id="solar3__panel">
+							<div class="list">
+								<div class="list__item">
+
+									<div class="item" id="bg">
+										<div class="item__header">
+											<h2>PIN <span>33</span></h2>
+										</div>
+										<img src="{% static "img/solar_bg.png" %}" alt="">
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Công suất</p>
+												<p>9999 <span>kW</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>Điện áp</p>
+												<p>9999 <span>kV</span></p>
+											</div>
+										</div>
+										<div class="item__footer">
+											<div class="item__footer__title">
+												<p>Dòng điện</p>
+												<p>9999 <span>kA</span></p>
+											</div>
+											<div class="item__footer__title">
+												<p>PV</p>
+												<p>9999</p>
+											</div>
+										</div>
+									</div>
+									
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</content>
+{% endblock content %}
